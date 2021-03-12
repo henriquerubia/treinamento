@@ -21,12 +21,14 @@ Route::get('/', function () {
 });
 
 Route::group(['prefix' => '/admin'], function() {
-    Route::get('/', [PostsAdminController::class, 'index'])->name('admin.posts.index');
-    Route::get('/create', [PostsAdminController::class, 'create'])->name('admin.posts.create');
-    Route::post('/store', [PostsAdminController::class, 'store'])->name('admin.posts.store');
-    Route::get('/edit/{id}', [PostsAdminController::class, 'edit'])->name('admin.posts.edit');
-    Route::put('/update/{id}', [PostsAdminController::class, 'update'])->name('admin.posts.update');
-    Route::get('/destroy/{id}', [PostsAdminController::class, 'destroy'])->name('admin.posts.destroy');
+    Route::group(['prefix' => '/posts'], function() {
+        Route::get('/', [PostsAdminController::class, 'index'])->name('admin.posts.index');
+        Route::get('/create', [PostsAdminController::class, 'create'])->name('admin.posts.create');
+        Route::post('/store', [PostsAdminController::class, 'store'])->name('admin.posts.store');
+        Route::get('/edit/{id}', [PostsAdminController::class, 'edit'])->name('admin.posts.edit');
+        Route::put('/update/{id}', [PostsAdminController::class, 'update'])->name('admin.posts.update');
+        Route::get('/destroy/{id}', [PostsAdminController::class, 'destroy'])->name('admin.posts.destroy');
+    });
 });
 
 Route::get('/posts', [PostsController::class, 'index']);
