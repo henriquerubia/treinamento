@@ -16,7 +16,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PostsController;
 use App\Http\Controllers\PostsAdminController;
 
-Route::get('/', [PostsController::class, 'index']);
+Route::get('/', [PostsController::class, 'index'])->name('home');
 
 Route::group(['prefix' => '/admin'], function() {
     Route::group(['prefix' => '/posts'], function() {
