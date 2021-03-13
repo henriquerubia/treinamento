@@ -16,9 +16,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PostsController;
 use App\Http\Controllers\PostsAdminController;
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [PostsController::class, 'index']);
 
 Route::group(['prefix' => '/admin'], function() {
     Route::group(['prefix' => '/posts'], function() {
@@ -30,5 +28,3 @@ Route::group(['prefix' => '/admin'], function() {
         Route::get('/destroy/{id}', [PostsAdminController::class, 'destroy'])->name('admin.posts.destroy');
     });
 });
-
-Route::get('/posts', [PostsController::class, 'index']);
