@@ -3,7 +3,8 @@
 @section('content')
     <div class="container">
         <br>
-        <h1>Editing Post: {{ $post->title }}</h1>
+        <h1>Edit Post: {{ $post->title }}</h1>
+        <br>
 
         @if($errors->any())
             <ul class="alert">
@@ -19,7 +20,7 @@
 
         <div class="form-group">
             {{ Form::label('tags', 'Tags:') }}
-            {{ Form::textarea('tags', $post->getTagListAttribute(), ['class' => 'form-control']) }}
+            {{ Form::text('tags', $post->getTagListAttribute(), ['class' => 'form-control']) }}
         </div>
 
         <div class="form-group">

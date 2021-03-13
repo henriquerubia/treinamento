@@ -4,6 +4,7 @@
     <div class="container">
         <br>
         <h1>Create new Post</h1>
+        <br>
 
         @if($errors->any())
             <ul class="alert">
@@ -20,7 +21,7 @@
 
         <div class="form-group">
             {{ Form::label('tags', 'Tags:') }}
-            {{ Form::textarea('tags', null, ['class' => 'form-control']) }}
+            {{ Form::text('tags', null, ['class' => 'form-control']) }}
         </div>
 
         <div class="form-group">

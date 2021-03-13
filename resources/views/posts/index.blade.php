@@ -6,7 +6,7 @@
         <div class="container">
             <h1 class="display-3">Bem-vindo ao Blogado!</h1>
             <p>Isso aqui ainda vai pegar fogo, karol agarrando o Bill, bebe chorando, globo da morte trabaiando,  moto estralando, engrenagem enpenando. Arrebentando arame, biela batendo, gil chamando pocah de Basculho, globo da morte trabaiando, vaca entrando no meio de roça!, menino correndo, arrebentando arame,  moto estralando, menino correndo. (by Lumena Ipsum)</p>
-            <p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more &raquo;</a></p>
+            <p><a class="btn btn-primary btn-lg" href="{{ route('admin.posts.create') }}" role="button">Publique sua postagem &raquo;</a></p>
         </div>
     </div>
 

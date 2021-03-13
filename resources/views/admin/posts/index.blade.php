@@ -4,6 +4,7 @@
     <div class="container">
         <br>
         <h1>Blog Admin</h1>
+        <br>
 
         <a href="{{ route('admin.posts.create') }}" class="btn btn-small btn-success">Create new post</a>
         <br><br>
