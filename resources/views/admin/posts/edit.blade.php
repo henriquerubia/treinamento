@@ -17,6 +17,11 @@
     @include('admin.posts._form')
 
     <div class="form-group">
+        {{ Form::label('tags', 'Tags:') }}
+        {{ Form::textarea('tags', $post->getTagListAttribute(), ['class' => 'form-control']) }}
+    </div>
+
+    <div class="form-group">
         {{ Form::submit('Save Changes', ['class' => 'btn btn-primary']) }}
     </div>
     {{ Form::close() }}
