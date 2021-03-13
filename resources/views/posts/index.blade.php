@@ -6,13 +6,12 @@
 
     @foreach($posts as $post)
         <h2>{{ $post->title }} (<i>{{ $post->created_at }}</i>)</h2>
-        <p>{{ $post->content }}</p>
-        <b>Tags:</b><br>
-        <ul>
+        <p>{{ $post->content }}</p><br>
+        <p><b>Tags:</b>
             @foreach($post->tags as $tag)
-                <li>{{ $tag->name }}</li>
+                <span class="badge bg-secondary">{{ $tag->name }}</span>
             @endforeach
-        </ul>
+        </p>
 
         <h3>Comments</h3>
         @foreach($post->comments as $comment)
@@ -21,5 +20,7 @@
         @endforeach
         <hr>
     @endforeach
+
+    {{ $posts->render() }}
 
 @endsection
